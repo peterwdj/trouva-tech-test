@@ -21,3 +21,8 @@ This project is built in full-stack JavaScript, using the following technologies
  - Chai
  - eslint
  - Istanbul
+
+
+## Miscellaneous notes
+
+RESTful routes are plural rather than singular, as per on Trouva website.
