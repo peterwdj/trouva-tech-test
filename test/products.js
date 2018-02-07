@@ -8,13 +8,15 @@ const expect = chai.expect;
 
 chai.use(chaiHttp);
 
-describe('/GET products', () => {
-  it('should return status code 200', (done) => {
-    chai.request(server)
+describe('Products', () => {
+  describe('/GET products', () => {
+    it('should return status code 200', (done) => {
+      chai.request(server)
       .get('/products')
       .end((err, res) => {
         expect(res).to.have.status(200);
       });
-    done();
+      done();
+    });
   });
 });
