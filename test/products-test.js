@@ -24,5 +24,13 @@ describe('Products', () => {
           done();
         });
     });
+    it('should contain 500 products', (done) => {
+      chai.request(server)
+        .get('/products')
+        .end((err, res) => {
+          expect(res.body.length).to.equal(500);
+          done();
+        });
+    });
   });
 });
