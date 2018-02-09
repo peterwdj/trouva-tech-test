@@ -27,4 +27,4 @@ This project is built in full-stack JavaScript, using the following technologies
 
 RESTful routes are plural rather than singular, as per on Trouva website.
 
-Note - performance optimisations by not sending entire json via GET /products, but creating Product objects server side and then sending array of those - but from c. 280ms to c. 40ms (n.b. --> 100ms considered bar for something to feel instantaneous); measured using time in Chai tests.
+Note - performance optimisations by not sending entire json via GET /products, but creating Product objects server side and then sending array of those - but from c. 280ms to c. 45ms (n.b. --> 100ms considered bar for something to feel instantaneous); measured using time in Chai tests.
