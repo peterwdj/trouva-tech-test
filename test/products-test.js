@@ -12,9 +12,15 @@ describe('Products', () => {
       chai.request(server)
         .get('/products')
         .end((err, res) => {
-          expect(err).to.be.null;
           expect(res).to.have.status(200);
-          // expect(res.body).to.be.a('array');
+          done();
+        });
+    });
+    it('should return an array', (done) => {
+      chai.request(server)
+        .get('/products')
+        .end((err, res) => {
+          expect(res.body).to.be.a('array');
           done();
         });
     });
