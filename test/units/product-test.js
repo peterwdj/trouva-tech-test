@@ -1,5 +1,5 @@
 const chai = require('chai');
-const Product = require('./../../lib/product');
+const Product = require('./../../app/lib/product');
 
 const expect = chai.expect;
 
