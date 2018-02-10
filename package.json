@@ -4,7 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "nyc mocha"
+    "test": "nyc mocha",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
