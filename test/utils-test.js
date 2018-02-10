@@ -1,7 +1,7 @@
 'use strict';
 
 const chai = require('chai');
-const utils = require('./../utils');
+const utils = require('./../app/utils');
 
 const expect = chai.expect;
 
