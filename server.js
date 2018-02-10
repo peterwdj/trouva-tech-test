@@ -11,7 +11,7 @@ const app = express();
 app.set('view engine', 'ejs');
 
 app.get('/products', (req, res) => {
-  let products = utils.createObjects(json.products);
+  const products = utils.createObjects(json.products);
   res.render('pages/products', { products });
 });
 
