@@ -11,6 +11,7 @@
         <h2><%= product.name %></h2>
         <img src="<%= product.image %>">
         <p><%= product.description %></p>
+        <p>£ <%= Math.round(product.price / 100).toFixed(2)  %></p>
       </div>
     <% }); %>
   </body>
