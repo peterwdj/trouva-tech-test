@@ -9,7 +9,7 @@ const port = 8000;
 const app = express();
 
 app.set('view engine', 'ejs');
-app.set('views', './app/views')
+app.set('views', './app/views');
 
 app.get('/products', (req, res) => {
   const products = utils.createObjects(json.products);
