@@ -16,6 +16,10 @@ app.get('/products', (req, res) => {
   res.render('pages/products', { products });
 });
 
+app.get('/collections', (req, res) => {
+  res.send('Hello, world');
+});
+
 app.listen(port);
 
 module.exports = app;

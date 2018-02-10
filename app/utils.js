@@ -1,3 +1,5 @@
+'use strict';
+
 const Product = require('./lib/product');
 
 function createObjects(array) {
