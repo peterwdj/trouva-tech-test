@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Trouva Products</title>
+  </head>
+  <body>
+    <h1>Trouva</h1>
+    <% products.forEach(function(product) { %>
+      <div class="product" id="<%= product.id %>">
+        <h2><%= product.name %></h2>
+        <img src="<%= product.image %>">
+        <p><%= product.description %></p>
+      </div>
+    <% }); %>
+  </body>
+</html>
