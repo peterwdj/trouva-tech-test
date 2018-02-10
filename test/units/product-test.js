@@ -27,6 +27,9 @@ describe('Product', () => {
   it('has a description', () => {
     expect(bowTie).to.have.property('description');
   });
+  it('has a price', () => {
+    expect(bowTie).to.have.property('price');
+  });
   it('creates a product with values from a json object', () => {
     const newBowTie = new Product(json.name, json._id, json.images[0].desktop, json.description);
     expect(newBowTie.name).to.equal('Bow tie');
