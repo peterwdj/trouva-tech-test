@@ -15,6 +15,7 @@ describe('Utils', () => {
           url: 'url.jpg',
         },
         description: 'Bow ties are cool',
+        price: '3200',
       },
     ];
 
