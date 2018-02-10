@@ -12,10 +12,10 @@ describe('Utils', () => {
         _id: '1234',
         name: 'Bow tie',
         thumbnail: {
-          url: 'url.jpg'
+          url: 'url.jpg',
         },
         description: 'Bow ties are cool',
-      }
+      },
     ];
 
     const products = utils.createObjects(productArray);
