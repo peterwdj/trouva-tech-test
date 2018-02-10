@@ -1,5 +1,3 @@
-
-
 const chai = require('chai');
 const Product = require('./../../lib/product');
 
