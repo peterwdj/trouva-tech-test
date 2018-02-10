@@ -6,7 +6,7 @@ This project is a tech test for [Trouva](https://www.trouva.com/). It is current
 
 To run the entire test suite, simply run:
 
-`mocha`
+`npm test`
 
 To run a certain file of tests, run:
 
