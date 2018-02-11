@@ -17,7 +17,7 @@ app.get('/products', (req, res) => {
 });
 
 app.get('/collections', (req, res) => {
-  res.send('Hello, world');
+  res.render('pages/collections');
 });
 
 app.listen(port);
