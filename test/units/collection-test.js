@@ -10,4 +10,10 @@ describe('Collection', () => {
   it('has a name', () => {
     expect(homeStuff).to.have.property('name');
   });
+  it('has a products property', () => {
+    expect(homeStuff).to.have.property('products');
+  });
+  it('has an empty array assigned to its products property by default', () => {
+    expect(homeStuff.products).to.be.a('array');
+  });
 });
