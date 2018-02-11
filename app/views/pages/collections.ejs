@@ -5,6 +5,13 @@
     <title>Trouva | Collections</title>
   </head>
   <body>
-    <% include ../partials.header %>
+    <% include ../partials/header %>
+    <% const collections = JSON.parse(localStorage.getItem("collections")); %>
+    <% if (collections) { %>
+      <!-- <% include ../partials/allCollections %> -->
+    <% } else { %>
+      <p>No collections :-(</p>
+      <!-- <% include ../partials/noCollections %> -->
+    <% }; %>
   </body>
 </html>
