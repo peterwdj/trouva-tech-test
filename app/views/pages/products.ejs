@@ -5,7 +5,7 @@
     <title>Trouva | Products</title>
   </head>
   <body>
-    <h1>Trouva</h1>
+    <% include ../partials.header %>
     <% products.forEach(function(product) { %>
       <div class="product" id="<%= product.id %>">
         <h2><%= product.name %></h2>
