@@ -12,7 +12,6 @@ const routes = require('./routes/routes');
 
 const json = JSON.parse(fs.readFileSync('products.json'));
 const url = `mongodb://localhost:27017/${config.database}`;
-console.log(url);
 const port = 8000;
 const app = express();
 
