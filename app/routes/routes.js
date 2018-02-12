@@ -1,5 +1,7 @@
 'use strict';
 
+const Collection = require('./../lib/collection');
+
 function routes(app, db) {
   app.get('/products', (req, res) => {
     db.collection('products').find().toArray((err, result) => {
@@ -14,7 +16,8 @@ function routes(app, db) {
   });
 
   app.post('/collections', (req, res) => {
-    res.send(200);
+    const collection = new Collection('Winter wardrobe');
+    res.send(collection);
   });
 }
 
