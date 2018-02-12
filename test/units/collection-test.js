@@ -2,7 +2,6 @@
 
 const chai = require('chai');
 const Collection = require('./../../app/lib/collection');
-const Product = require('./../../app/lib/product');
 
 const expect = chai.expect;
 

@@ -12,9 +12,9 @@ function createObjects(array) {
 }
 
 function seedProducts(db, products) {
-  for (let product of products) {
+  products.forEach((product) => {
     db.collection('products').save(product);
-  }
+  });
 }
 
 module.exports.createObjects = createObjects;
