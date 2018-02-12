@@ -7,7 +7,7 @@
   <body>
     <% include ../partials/header %>
     <% if (collections.length != 0) { %>
-      <p>Yay, collections!</p>
+      <% include ../partials/showCollections %>
     <% } else { %>
       <% include ../partials/createCollection %>
     <% }; %>
