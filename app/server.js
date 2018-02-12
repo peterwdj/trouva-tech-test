@@ -2,6 +2,7 @@
 
 const express = require('express');
 const MongoClient = require('mongodb').MongoClient;
+const bodyParser = require('body-parser');
 const fs = require('fs');
 const utils = require('./utils');
 const routes = require('./routes/routes');
@@ -13,6 +14,8 @@ const app = express();
 
 app.set('view engine', 'ejs');
 app.set('views', './app/views');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 MongoClient.connect(url, (err, db) => {
   const database = db.db('trouva_dev');
