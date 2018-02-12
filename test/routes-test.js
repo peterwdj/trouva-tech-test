@@ -41,8 +41,6 @@ describe('/POST collections', () => {
       .send(collection)
       .end((err, res) => {
         expect(res).to.have.status(200);
-        expect(res.body).to.have.property('name');
-        expect(res.body).to.have.property('products');
         done();
       });
   });
