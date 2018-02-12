@@ -1,23 +1,20 @@
 'use strict';
 
 const express = require('express');
-const fs = require('fs');
-const utils = require('./utils');
+const MongoClient = require('mongodb').MongoClient;
+const routes = require('./routes/routes')
 
-const json = JSON.parse(fs.readFileSync('products.json'));
+const url = 'mongodb://localhost:27017/trouva_dev'
 const port = 8000;
 const app = express();
 
 app.set('view engine', 'ejs');
 app.set('views', './app/views');
 
-app.get('/products', (req, res) => {
-  const products = utils.createObjects(json.products);
-  res.render('pages/products', { products });
-});
-
-app.get('/collections', (req, res) => {
-  res.render('pages/collections');
+MongoClient.connect(url, (err, db) => {
+  const database = db.db('trouva_dev');
+  if (err) return console.log(err);
+  routes(app);
 });
 
 app.listen(port);
