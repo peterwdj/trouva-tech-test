@@ -14,8 +14,7 @@ const url = `mongodb://localhost:27017/${config.database}`;
 chai.use(chaiHttp);
 
 describe('Test API routes', () => {
-
-  afterEach(function(done) {
+  afterEach((done), => {
     MongoClient.connect(url, (err, db) => {
       const database = db.db(config.database);
       database.collection('collections').drop();
@@ -26,22 +25,22 @@ describe('Test API routes', () => {
   describe('/GET products', () => {
     it('should return status code 200', (done) => {
       chai.request(server)
-      .get('/products')
-      .end((err, res) => {
-        expect(res).to.have.status(200);
-        done();
-      });
+        .get('/products')
+        .end((err, res) => {
+          expect(res).to.have.status(200);
+          done();
+        });
     });
   });
 
   describe('/GET collections', () => {
     it('should return status code 200', (done) => {
       chai.request(server)
-      .get('/collections')
-      .end((err, res) => {
-        expect(res).to.have.status(200);
-        done();
-      });
+        .get('/collections')
+        .end((err, res) => {
+          expect(res).to.have.status(200);
+          done();
+        });
     });
   });
 
@@ -52,12 +51,12 @@ describe('Test API routes', () => {
     };
     it('should POST a new collection', (done) => {
       chai.request(server)
-      .post('/collections')
-      .send(collection)
-      .end((err, res) => {
-        expect(res).to.have.status(200);
-        done();
-      });
+        .post('/collections')
+        .send(collection)
+        .end((err, res) => {
+          expect(res).to.have.status(200);
+          done();
+        });
     });
   });
 });
