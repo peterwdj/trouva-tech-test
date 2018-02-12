@@ -18,7 +18,7 @@ function routes(app, db) {
   app.post('/collections', (req, res) => {
     const collection = new Collection(req.body.name);
     db.collection('collections').save(collection);
-    res.send(collection);
+    res.redirect('/collections');
   });
 }
 
