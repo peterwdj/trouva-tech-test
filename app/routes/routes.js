@@ -1,14 +1,11 @@
 'use strict';
 
-const utils = require('./../utils');
-const fs = require('fs');
-
-const json = JSON.parse(fs.readFileSync('products.json'));
-
-const routes = function (app) {
+const routes = function (app, db) {
   app.get('/products', (req, res) => {
-    const products = utils.createObjects(json.products);
-    res.render('pages/products', { products });
+    db.collection('products').find().toArray((err, result) => {
+      if (err) return console.log(err);
+      res.render('pages/products', { products: result });
+    });
   });
 
   app.get('/collections', (req, res) => {
