@@ -11,4 +11,11 @@ function createObjects(array) {
   return products;
 }
 
+function seedProducts(db, products) {
+  for (let product of products) {
+    db.collection('products').save(product);
+  }
+}
+
 module.exports.createObjects = createObjects;
+module.exports.seedProducts = seedProducts;

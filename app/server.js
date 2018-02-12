@@ -17,9 +17,7 @@ app.set('views', './app/views');
 MongoClient.connect(url, (err, db) => {
   const database = db.db('trouva_dev');
   const products = utils.createObjects(json.products);
-  for (let product of products) {
-    database.collection('products').save(product);
-  };
+  utils.seedProducts(database, products);
   if (err) return console.log(err);
   routes(app, database);
 });
