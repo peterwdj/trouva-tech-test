@@ -31,16 +31,13 @@ describe('/GET collections', () => {
 });
 
 describe('/POST collections', () => {
-  const collection = {
-    name: 'Homewares',
-  };
   it('should POST a new collection', (done) => {
     chai.request(server)
       .post('/collections')
-      .send(collection)
       .end((err, res) => {
         expect(res).to.have.status(200);
-        console.log('Hello, world');
+        expect(res.body).to.have.property('name');
+        expect(res.body).to.have.property('products');
         done();
       });
   });
