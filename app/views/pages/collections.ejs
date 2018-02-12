@@ -6,5 +6,10 @@
   </head>
   <body>
     <% include ../partials/header %>
+    <% if (collections.length != 0) { %>
+      <p>Yay, collections!</p>
+    <% } else { %>
+      <p>Booooooo, no collections :-(</p>
+    <% }; %>
   </body>
 </html>
