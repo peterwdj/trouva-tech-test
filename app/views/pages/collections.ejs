@@ -6,11 +6,5 @@
   </head>
   <body>
     <% include ../partials/header %>
-    <% const collections = JSON.parse(localStorage.getItem("collections")); %>
-    <% if (collections) { %>
-      <p>Yay! Collections!</p>
-    <% } else { %>
-      <p>No collections :-(</p>
-    <% }; %>
   </body>
 </html>
