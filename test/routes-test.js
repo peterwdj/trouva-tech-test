@@ -31,9 +31,14 @@ describe('/GET collections', () => {
 });
 
 describe('/POST collections', () => {
+  const collection = {
+    name: 'Homewares',
+    products: [],
+  };
   it('should POST a new collection', (done) => {
     chai.request(server)
       .post('/collections')
+      .send(collection)
       .end((err, res) => {
         expect(res).to.have.status(200);
         expect(res.body).to.have.property('name');
