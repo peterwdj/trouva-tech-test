@@ -5,7 +5,7 @@ const config = {
   test: {
     database: 'trouva_test',
   },
-}
+};
 
 function getEnv(env) {
   return config[env];
