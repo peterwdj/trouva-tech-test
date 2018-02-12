@@ -8,7 +8,9 @@ function routes(app, db) {
   });
 
   app.get('/collections', (req, res) => {
-    res.render('pages/collections');
+    db.collection('collections').find().toArray((err, result) => {
+      res.render('pages/collections', { collections: result });
+    });
   });
 }
 
