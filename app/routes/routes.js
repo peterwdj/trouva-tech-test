@@ -12,6 +12,10 @@ function routes(app, db) {
       res.render('pages/collections', { collections: result });
     });
   });
+
+  app.post('/collections', (req, res) => {
+    res.send(200);
+  });
 }
 
 module.exports = routes;
