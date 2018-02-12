@@ -8,10 +8,9 @@
     <% include ../partials/header %>
     <% const collections = JSON.parse(localStorage.getItem("collections")); %>
     <% if (collections) { %>
-      <!-- <% include ../partials/allCollections %> -->
+      <p>Yay! Collections!</p>
     <% } else { %>
       <p>No collections :-(</p>
-      <!-- <% include ../partials/noCollections %> -->
     <% }; %>
   </body>
 </html>
