@@ -1,3 +1,6 @@
 $(document).ready(function() {
-  console.log("HELLO");
+  $('.add-to-collection').click(function() {
+    let productId = ($(this).parent().prop('id'));
+    console.log(productId);
+  });
 });
