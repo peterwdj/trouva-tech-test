@@ -14,7 +14,7 @@ const url = `mongodb://localhost:27017/${config.database}`;
 chai.use(chaiHttp);
 
 describe('Test API routes', () => {
-  afterEach((done), => {
+  afterEach((done) => {
     MongoClient.connect(url, (err, db) => {
       const database = db.db(config.database);
       database.collection('collections').drop();
