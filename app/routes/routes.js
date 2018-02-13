@@ -4,8 +4,10 @@ const Collection = require('./../lib/collection');
 
 function routes(app, db) {
   app.get('/products', (req, res) => {
-    db.collection('products').find().toArray((err, result) => {
-      res.render('pages/products', { products: result });
+    db.collection('products').find().toArray((err, products) => {
+      db.collection('collections').find().toArray((err, collections) => {
+        res.render('pages/products', { products: products, collections: collections });
+      })
     });
   });
 
