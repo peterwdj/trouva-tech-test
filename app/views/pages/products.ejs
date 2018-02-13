@@ -12,6 +12,12 @@
         <img src="<%= product.image %>">
         <p><%= product.description %></p>
         <p>£ <%= Math.round(product.price / 100).toFixed(2)  %></p>
+        <select>
+          <% for (collection of collections) { %>
+            <option value="<%= collection._id %>"><%= collection.name %></option>
+            <% }; %>
+        </select>
+        <button>Add to collection</button>
       </div>
     <% }; %>
   </body>
