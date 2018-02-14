@@ -59,4 +59,20 @@ describe('Test API routes', () => {
         });
     });
   });
+
+  describe('/POST collections/:id', () => {
+    const IDs = {
+      productId: 4,
+      collectionId: '5a83f62d7bf1e73233481704',
+    };
+    it('should POST a collection ID and product ID', (done) => {
+      chai.request(server)
+        .post(`/collections/${IDs.collectionId}`)
+        .send(IDs)
+        .end((err, res) => {
+          expect(res).to.have.status(200);
+          done();
+        });
+    });
+  });
 });
