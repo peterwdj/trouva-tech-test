@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "test": "nyc mocha test/* --exit",
-    "start": "node app/server.js"
+    "start": "node app/server.js",
+    "lint": "eslint app/* test/*",
+    "dev": "nodemon app/server.js"
   },
   "repository": {
     "type": "git",
