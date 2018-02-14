@@ -6,6 +6,7 @@
   </head>
   <body>
     <% include ../partials/header %>
+    <h2>Products</h2>
     <% for (product of products) { %>
       <div class="product" id="<%= product._id %>">
         <h2><%= product.name %></h2>
