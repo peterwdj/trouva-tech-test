@@ -7,7 +7,8 @@
     "test": "nyc mocha test/* --exit",
     "start": "node app/server.js",
     "lint": "eslint app/* test/*",
-    "dev": "nodemon app/server.js"
+    "dev": "nodemon app/server.js",
+    "sass:compile": "node-sass --include-path sass app/public/css/mystyle.scss app/public/css/style.css"
   },
   "repository": {
     "type": "git",
