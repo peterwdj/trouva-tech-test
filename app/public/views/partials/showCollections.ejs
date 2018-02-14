@@ -1,7 +1,10 @@
-<h3>My collections</h3>
-
 <% collections.forEach(function(collection) { %>
   <h4><%= collection.name %></h4>
+  <% if (collection.products.length == 1) { %>
+    <p><%= collection.products.length %> product</p>
+  <% } else { %>
+    <p><%= collection.products.length %> products</p>
+  <% }; %>
 <% }); %>
 
 <p>Want to create a new collection?</p>
