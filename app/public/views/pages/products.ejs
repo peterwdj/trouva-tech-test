@@ -8,14 +8,14 @@
     <% include ../partials/header %>
     <h2 class="page-title">Products</h2>
     <% for (product of products) { %>
-      <div class="card product" id="<%= product._id %>">
+      <div class="card" id="<%= product._id %>">
         <div class="card-content">
-          <h2 class="product-name"><%= product.name %></h2>
+          <h2><%= product.name %></h2>
           <figure class="image is-128x128">
             <img class="product-image" src="<%= product.image %>">
           </figure>
-          <p class="product-description"><%= product.description %></p>
-          <p class="product-price">£ <%= Math.round(product.price / 100).toFixed(2)  %></p>
+          <p><%= product.description %></p>
+          <p>£ <%= Math.round(product.price / 100).toFixed(2)  %></p>
           <select class="select-collection">
             <% for (collection of collections) { %>
               <option value="<%= collection._id %>"><%= collection.name %></option>
