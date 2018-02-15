@@ -6,35 +6,37 @@
   </head>
   <body>
     <% include ../partials/header %>
+    <section class="hero is-primary">
+      <div class="container">
+        <h1 class="title is-2">Products</h1>
+        <h2 class="subtitle is-5">Find yourself a little something...</h2>
+      </div>
+    </section>
     <div class="products-content">
       <div class="container">
-        <section class="hero">
-          <div class="container">
-            <h1 class="title is-2">Products</h1>
-            <h2 class="subtitle is-5">Find yourself a little something...</h2>
-          </div>
-        </section>
         <div class="columns is-multiline">
           <% for (product of products) { %>
-            <div class="column is-one-third">
+            <div class="column is-one-quarter">
               <div class="card" id="<%= product._id %>">
                 <div class="card-content">
-                  <h2><%= product.name %></h2>
+                  <h1 class="title is-5"><%= product.name %></h1>
                   <figure class="image is-3by2">
                     <img class="product-image" src="<%= product.image %>">
                   </figure>
                   <% if (product.description.length > 100) { %>
-                    <p><%= product.description.substring(0, 98) + '...' %></p>
+                    <p class="product-description"><%= product.description.substring(0, 98) + '...' %></p>
                   <% } else { %>
-                    <p><%= product.description %></p>
+                    <p class="product-description"><%= product.description %></p>
                   <% }; %>
-                  <p>£ <%= Math.round(product.price / 100).toFixed(2)  %></p>
-                  <select class="select-collection">
-                    <% for (collection of collections) { %>
-                      <option value="<%= collection._id %>"><%= collection.name %></option>
-                    <% }; %>
-                  </select>
-                  <button class="add-to-collection">Add to collection</button>
+                  <p class="product-price">£ <%= Math.round(product.price / 100).toFixed(2)  %></p>
+                  <div class="select is-primary">
+                    <select>
+                      <% for (collection of collections) { %>
+                        <option value="<%= collection._id %>"><%= collection.name %></option>
+                        <% }; %>
+                      </select>
+                  </div>
+                  <button class="button add-to-collection">Add to collection</button>
                 </div>
               </div>
             </div>
