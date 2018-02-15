@@ -6521,11 +6521,17 @@ label.panel-block {
   margin-left: 1rem;
   border-radius: 0px; }
 
-.products-content {
-  margin-top: 15rem; }
+.page-content {
+  margin-top: 12rem; }
 
 .title-container {
   position: fixed; }
+
+.card-content {
+  min-height: 28.5rem; }
+
+.product-title {
+  min-height: 3.5rem; }
 
 section {
   margin-top: 3rem;
@@ -6544,3 +6550,6 @@ section {
 
 .product-price {
   color: #6e6e6e; }
+
+option {
+  max-width: 10rem; }
