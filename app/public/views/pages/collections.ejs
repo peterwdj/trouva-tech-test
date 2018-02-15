@@ -6,11 +6,20 @@
   </head>
   <body>
     <% include ../partials/header %>
-    <h2 class="page-title">My Collections</h2>
-    <% if (collections.length != 0) { %>
-      <% include ../partials/showCollections %>
-    <% } else { %>
-      <% include ../partials/createCollection %>
-    <% }; %>
+    <section class="hero is-primary">
+      <div class="container">
+        <h2 class="title is-2">Collections</h2>
+        <h2 class="subtitle is-5">Take a look through your lucky finds...</h2>
+      </div>
+    </section>
+    <div class="page-content">
+      <div class="container">
+        <% if (collections.length != 0) { %>
+          <% include ../partials/showCollections %>
+        <% } else { %>
+          <% include ../partials/createCollection %>
+        <% }; %>
+      </div>
+    </div>
   </body>
 </html>
