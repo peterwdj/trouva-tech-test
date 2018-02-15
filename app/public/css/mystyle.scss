@@ -1,17 +1,25 @@
+// Imports initial variables and Bulma functions
 @import '../vendors/bulma/sass/utilities/initial-variables';
 @import '../vendors/bulma/sass/utilities/functions';
 
+// Sets initial variables
 $black: #1a1a1a;
 $trouva-orange: #FF6464;
+$family-sans-serif: 'Cabin', sans-serif;
 
+
+// Sets derived variables
 $primary: $trouva-orange;
+$family-primary: $family-sans-serif;
+$button-color: $trouva-orange;
+$button-hover-color: $black;
 
+
+// Imports Bulma
 @import '../vendors/bulma/bulma.sass';
 
-html, body {
-  font-family: 'Cabin', sans-serif;
-}
 
+// Sassy CSS
 .level {
   width: 100%;
 }
@@ -22,4 +30,5 @@ html, body {
 
 .button {
   margin-left: 1rem;
+  border-radius: 0px;
 }
