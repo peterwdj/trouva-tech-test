@@ -2,9 +2,24 @@
 @import '../vendors/bulma/sass/utilities/functions';
 
 $black: #1a1a1a;
+$trouva-orange: #FF6464;
+
+$primary: $trouva-orange;
 
 @import '../vendors/bulma/bulma.sass';
 
 html, body {
   font-family: 'Cabin', sans-serif;
+}
+
+.level {
+  width: 100%;
+}
+
+.navbar {
+  padding: 1rem 0rem;
+}
+
+.button {
+  margin-left: 1rem;
 }
