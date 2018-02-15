@@ -16,6 +16,8 @@ $primary: $trouva-orange;
 $family-primary: $family-sans-serif;
 $button-color: $trouva-orange;
 $button-hover-color: $black;
+$grey: $trouva-grey;
+$dark: $trouva-grey-darker;
 
 
 // Imports Bulma
@@ -23,6 +25,15 @@ $button-hover-color: $black;
 
 
 // Sassy CSS
+.logo {
+  max-width: 60%;
+  height: auto;
+}
+
+.header {
+  height: 2rem;
+}
+
 .level {
   width: 100%;
 }
@@ -37,7 +48,7 @@ $button-hover-color: $black;
 }
 
 .products-content {
-  margin-top: 7rem;
+  margin-top: 15rem;
 }
 
 .title-container {
@@ -45,12 +56,23 @@ $button-hover-color: $black;
 }
 
 section {
-  margin-bottom: 1.5rem;
+  margin-top: 3rem;
+  padding: 1rem;
+  width: 100%;
+  position: fixed;
+  z-index: 5;
 }
 
 .subtitle {
   color: $trouva-grey-darker;
   font-family: $family-cursive;
   padding-top: 0.5rem;
-  // text-transform: lowercase;
+}
+
+.product-description {
+  color: $dark;
+}
+
+.product-price {
+  color: $grey;
 }
