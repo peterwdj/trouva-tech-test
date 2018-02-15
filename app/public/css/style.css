@@ -102,7 +102,7 @@ button,
 input,
 select,
 textarea {
-  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif; }
+  font-family: "Cabin", sans-serif; }
 
 code,
 pre {
@@ -919,7 +919,7 @@ a.box:active {
   user-select: none;
   background-color: white;
   border-color: #dbdbdb;
-  color: #363636;
+  color: #FF6464;
   cursor: pointer;
   justify-content: center;
   padding-left: 0.75em;
@@ -946,7 +946,7 @@ a.box:active {
     margin-right: calc(-0.375em - 1px); }
   .button:hover, .button.is-hovered {
     border-color: #b5b5b5;
-    color: #363636; }
+    color: #1a1a1a; }
   .button:focus, .button.is-focused {
     border-color: #3273dc;
     color: #363636; }
@@ -6504,9 +6504,6 @@ label.panel-block {
   background-color: whitesmoke;
   padding: 3rem 1.5rem 6rem; }
 
-html, body {
-  font-family: 'Cabin', sans-serif; }
-
 .level {
   width: 100%; }
 
@@ -6514,4 +6511,5 @@ html, body {
   padding: 1rem 0rem; }
 
 .button {
-  margin-left: 1rem; }
+  margin-left: 1rem;
+  border-radius: 0px; }
