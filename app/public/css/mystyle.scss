@@ -56,11 +56,16 @@ $dark: $trouva-grey-darker;
 }
 
 .card-content {
-  min-height: 28.5rem;
+  min-height: 27rem;
 }
 
 .product-title {
   min-height: 3.5rem;
+}
+
+.product-description {
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 section {
