@@ -1,0 +1,8 @@
+<div class="box is-radiusless">
+  <h4 class="collection-name weight-bold is-size-2"><%= collection.name %></h4>
+  <% if (collection.products.length == 1) { %>
+    <p class="is-size-4 weight-light collection-items"><%= collection.products.length %> product</p>
+  <% } else { %>
+    <p class="is-size-4 weight-light collection-items"><%= collection.products.length %> products</p>
+  <% }; %>
+</div>
