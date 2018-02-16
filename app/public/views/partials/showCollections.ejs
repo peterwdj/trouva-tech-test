@@ -1,11 +1,17 @@
 <% collections.forEach(function(collection) { %>
-  <h4 class="collection-name"><%= collection.name %></h4>
-  <% if (collection.products.length == 1) { %>
-    <p class="collection-product-count"><%= collection.products.length %> product</p>
-  <% } else { %>
-    <p class="collection-product-count"><%= collection.products.length %> products</p>
-  <% }; %>
+  <div class="box is-radiusless">
+    <h4 class="collection-name weight-bold is-size-2"><%= collection.name %></h4>
+    <% if (collection.products.length == 1) { %>
+      <p class="is-size-4 weight-light collection-items"><%= collection.products.length %> product</p>
+    <% } else { %>
+      <p class="is-size-4 weight-light collection-items"><%= collection.products.length %> products</p>
+    <% }; %>
+  </div>
 <% }); %>
 
-<p class="create-collection-helper">Want to create a new collection?</p>
+<p class="new-collection-title is-size-3">Want to create a new collection?</p>
+<p class="collection-helper-text">Collections are helpful lists, allowing you to save products and come back to view them at a later date.
+<br>
+You can create as many lists as you like, for everything from wedding gifts, to items for your house, or your new winter wardrobe.
+</p>
 <% include collectionForm %>
