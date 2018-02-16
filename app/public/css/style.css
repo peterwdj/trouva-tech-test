@@ -6574,4 +6574,11 @@ option {
 
 .collection-helper-text {
   color: #6e6e6e;
-  font-size: 1.25rem; }
+  font-size: 1.25rem;
+  margin-bottom: 2rem; }
+
+.collection-form {
+  margin-bottom: 5rem; }
+
+.input {
+  width: 20rem; }
