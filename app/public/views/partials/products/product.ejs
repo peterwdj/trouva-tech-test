@@ -1,0 +1,31 @@
+<div class="card">
+  <div class="card-content" id="<%= product._id %>">
+    <div class="product-title">
+      <h1 class="title is-5"><%= product.name %></h1>
+    </div>
+    <figure class="image is-3by2">
+      <img class="product-image" src="<%= product.image %>">
+    </figure>
+    <div class="product-description-container">
+      <% if (product.description.length > 100) { %>
+        <p class="product-description"><%= product.description.substring(0, 98) + '...' %></p>
+      <% } else { %>
+        <p class="product-description"><%= product.description %></p>
+      <% }; %>
+    </div>
+    <p class="product-price">£ <%= Math.round(product.price / 100).toFixed(2)  %></p>
+    <% if (collections.length != 0) { %>
+      <div class="select is-primary">
+        <select>
+          <option value="" disabled selected hidden>Choose a collection</option>
+          <% for (collection of collections) { %>
+            <option value="<%= collection._id %>"><%= collection.name %></option>
+          <% }; %>
+        </select>
+      </div>
+      <button class="button add-to-collection">Add</button>
+    <% } else { %>
+      <p class="create-collection-text">You don't have any collections yet. Why not <a href="/collections">create one?</a></p>
+    <% }; %>
+  </div>
+</div>
