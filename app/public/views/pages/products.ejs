@@ -33,15 +33,19 @@
                     <% }; %>
                   </div>
                   <p class="product-price">£ <%= Math.round(product.price / 100).toFixed(2)  %></p>
-                  <div class="select is-primary">
-                    <select>
-                      <option value="" disabled selected hidden>Choose a collection</option>
-                      <% for (collection of collections) { %>
-                        <option value="<%= collection._id %>"><%= collection.name %></option>
+                  <% if (collections.length != 0) { %>
+                    <div class="select is-primary">
+                      <select>
+                        <option value="" disabled selected hidden>Choose a collection</option>
+                        <% for (collection of collections) { %>
+                          <option value="<%= collection._id %>"><%= collection.name %></option>
                         <% }; %>
                       </select>
-                  </div>
-                  <button class="button add-to-collection">Add</button>
+                    </div>
+                    <button class="button add-to-collection">Add</button>
+                  <% } else { %>
+                    <p class="create-collection-text">You don't have any collections yet. Why not <a href="/collections">create one?</a></p>
+                  <% }; %>
                 </div>
               </div>
             </div>
