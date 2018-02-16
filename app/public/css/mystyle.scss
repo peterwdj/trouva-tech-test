@@ -18,6 +18,7 @@ $button-color: $trouva-orange;
 $button-hover-color: $black;
 $grey: $trouva-grey;
 $dark: $trouva-grey-darker;
+$link: $trouva-orange;
 
 
 // Imports Bulma
@@ -93,6 +94,11 @@ section {
 
 .product-price {
   color: $grey;
+}
+
+.create-collection-text {
+  margin-top: 1rem;
+  color: $dark;
 }
 
 option {
