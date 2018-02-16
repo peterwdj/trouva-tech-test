@@ -25,11 +25,13 @@
                   <figure class="image is-3by2">
                     <img class="product-image" src="<%= product.image %>">
                   </figure>
-                  <% if (product.description.length > 100) { %>
-                    <p class="product-description"><%= product.description.substring(0, 98) + '...' %></p>
-                  <% } else { %>
-                    <p class="product-description"><%= product.description %></p>
-                  <% }; %>
+                  <div class="product-description-container">
+                    <% if (product.description.length > 100) { %>
+                      <p class="product-description"><%= product.description.substring(0, 98) + '...' %></p>
+                    <% } else { %>
+                      <p class="product-description"><%= product.description %></p>
+                    <% }; %>
+                  </div>
                   <p class="product-price">£ <%= Math.round(product.price / 100).toFixed(2)  %></p>
                   <div class="select is-primary">
                     <select>
