@@ -6558,3 +6558,20 @@ section {
 
 option {
   max-width: 10rem; }
+
+.box {
+  border-top: none;
+  border-right: none; }
+
+.collection-name {
+  margin-bottom: 0; }
+
+.collection-items {
+  color: #6e6e6e; }
+
+.new-collection-title {
+  margin-top: 5rem; }
+
+.collection-helper-text {
+  color: #6e6e6e;
+  font-size: 1.25rem; }
