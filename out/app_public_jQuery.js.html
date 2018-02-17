@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Module: app</title>
+    <title>JSDoc: Source: app/public/jQuery.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,130 +17,37 @@
 
 <div id="main">
 
-    <h1 class="page-title">Module: app</h1>
+    <h1 class="page-title">Source: app/public/jQuery.js</h1>
 
     
 
 
 
-
-<section>
-
-<header>
     
-        
-            
-        
-    
-</header>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * The jQuery plugin namespace.
+ * @external "jQuery.fn"
+ * @see {@link http://learn.jquery.com/plugins/|jQuery Plugins}
+ */
 
-<article>
-    <div class="container-overview">
-    
-        
-            <div class="description">app Module, exports the app module.</div>
-        
+/**
+ * A jQuery plugin to send a POST request to /collections/:id.
+ * @function external:"jQuery.fn"
+ */
 
-        
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="app_server.js.html">app/server.js</a>, <a href="app_server.js.html#line113">line 113</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-    
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</article>
-
-</section>
+$(document).ready(function () {
+  $('button.add-to-collection').click(function() {
+    const productId = $(this).parent().prop('id');
+    const collectionId = $(`#${productId} select :selected`).val();
+    $.post(`/collections/${collectionId}`, { productId, collectionId });
+    $(this).parent().append('&lt;p class="confirmation-message">This lucky find has been saved to your collection!&lt;/p>');
+  });
+});
+</code></pre>
+        </article>
+    </section>
 
 
 

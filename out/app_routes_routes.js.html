@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: app/routes/routes.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: app/routes/routes.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>'use strict';
+
+/** Routing file for application
+ * @module routes/routes
+ * @requires collection
+ * @requires mongodb.ObjectID
+ */
+
+/**
+ * collection module
+ * @const
+ */
+const Collection = require('./../lib/collection');
+
+/**
+ * mongodb.ObjectID module
+ * @const
+ */
+const ObjectID = require('mongodb').ObjectID;
+
+
+/**
+ * @function
+ * @name routes
+ * @param {object} app - An instance of the Express framework.
+ * @param {object} db - A connection to a MongoDB database.
+ */
+function routes(app, db) {
+  /**
+   * Route serving index page, redirecting to products page.
+   * @name get/
+   * @function
+   * @memberof module:routes~routesRoutes
+   * @inner
+   * @param {string} path - Express path
+   * @param {callback} middlewear - Express middlewear.
+   */
+  app.get('/', (req, res) => {
+    res.redirect('/products');
+  });
+
+  /**
+   * Route serving products page.
+   * @name get/products
+   * @function
+   * @memberof module:routes~routesRoutes
+   * @inner
+   * @param {string} path - Express path
+   * @param {callback} middlewear - Express middlewear.
+   */
+  app.get('/products', (req, res) => {
+    db.collection('products').find().toArray((err, products) => {
+      db.collection('collections').find().toArray((error, collections) => {
+        res.render('pages/products', { products, collections });
+      });
+    });
+  });
+
+  /**
+   * Route serving collections page.
+   * @name get/collections
+   * @function
+   * @memberof module:routes~routesRoutes
+   * @inner
+   * @param {string} path - Express path
+   * @param {callback} middlewear - Express middlewear.
+   */
+  app.get('/collections', (req, res) => {
+    db.collection('collections').find().toArray((err, result) => {
+      res.render('pages/collections', { collections: result });
+    });
+  });
+
+  /**
+   * Route creating a new collection and redirecting to get/collections.
+   * @name post/collections
+   * @function
+   * @memberof module:routes~routesRoutes
+   * @inner
+   * @param {string} path - Express path
+   * @param {callback} middlewear - Express middlewear.
+   */
+  app.post('/collections', (req, res) => {
+    /**
+     * Assigns the collection constant the value of the request body's name.
+     * @const
+     * @type {function}
+     * @default
+     */
+    const collection = new Collection(req.body.name);
+    db.collection('collections').save(collection);
+    res.redirect('/collections');
+  });
+
+  /**
+   * Route adding a product to a collection.
+   * @name post/collections/:id
+   * @function
+   * @memberof module:routes~routesRoutes
+   * @inner
+   * @param {string} path - Express path
+   * @param {callback} middlewear - Express middlewear.
+   */
+  app.post('/collections/:id', (req, res) => {
+    /**
+     * Assigns the collectionId constant the value of the request body's collectionId expressed as a string.
+     * @const
+     * @type {function}
+     * @default
+     */
+    const collectionId = req.body.collectionId.toString();
+    /**
+     * Assigns the productId constant the value of the request body's productId.
+     * @const
+     * @type {function}
+     * @default
+     */
+    const productId = req.body.productId;
+    db.collection('products').find({ _id: productId }).toArray((err, result) => {
+      db.collection('collections').update(
+        { _id: ObjectID(collectionId) },
+        { $push: { products: result[0] } }
+      );
+      res.send('Product has been successfully added to collection.');
+    });
+  });
+}
+
+/**
+ * Routes Module, exports all application routes.
+ * @module routes
+ */
+module.exports = routes;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-app.html">app</a></li><li><a href="module-collection.html">collection</a></li><li><a href="module-createObjects.html">createObjects</a></li><li><a href="module-product.html">product</a></li><li><a href="module-routes.html">routes</a></li><li><a href="module-routes_routes.html">routes/routes</a></li><li><a href="module-seedProducts.html">seedProducts</a></li></ul><h3>Externals</h3><ul><li><a href="external-_jQuery.fn_.html">jQuery.fn</a></li></ul><h3>Classes</h3><ul><li><a href="global.html#Collection">Collection</a></li><li><a href="global.html#Product">Product</a></li></ul><h3>Global</h3><ul><li><a href="global.html#app">app</a></li><li><a href="global.html#bodyParser">bodyParser</a></li><li><a href="global.html#chai">chai</a></li><li><a href="global.html#chaiHttp">chaiHttp</a></li><li><a href="global.html#collection">collection</a></li><li><a href="global.html#config">config</a></li><li><a href="global.html#createObjects">createObjects</a></li><li><a href="global.html#expect">expect</a></li><li><a href="global.html#express">express</a></li><li><a href="global.html#fs">fs</a></li><li><a href="global.html#getEnv">getEnv</a></li><li><a href="global.html#json">json</a></li><li><a href="global.html#MongoClient">MongoClient</a></li><li><a href="global.html#port">port</a></li><li><a href="global.html#routes">routes</a></li><li><a href="global.html#server">server</a></li><li><a href="global.html#url">url</a></li><li><a href="global.html#utils">utils</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sat Feb 17 2018 23:41:33 GMT+0000 (GMT)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

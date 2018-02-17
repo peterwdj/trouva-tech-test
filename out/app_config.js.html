@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Module: app</title>
+    <title>JSDoc: Source: app/config.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,130 +17,46 @@
 
 <div id="main">
 
-    <h1 class="page-title">Module: app</h1>
+    <h1 class="page-title">Source: app/config.js</h1>
 
     
 
 
 
-
-<section>
-
-<header>
     
-        
-            
-        
-    
-</header>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @constant collection
+ * @type {json}
+ * @default
+ */
+const config = {
+  development: {
+    database: 'trouva_dev',
+  },
+  test: {
+    database: 'trouva_test',
+  },
+};
 
-<article>
-    <div class="container-overview">
-    
-        
-            <div class="description">app Module, exports the app module.</div>
-        
+/**
+ * @function
+ * @name getEnv
+ * @param {string} env - The variable assigned to process.env.NODE_ENV variable, set to either test or development.
+ */
+function getEnv(env) {
+  return config[env];
+}
 
-        
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="app_server.js.html">app/server.js</a>, <a href="app_server.js.html#line113">line 113</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-    
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</article>
-
-</section>
+/**
+ * getEnv Module, exports the getEnv function.
+ * @module collection
+ */
+module.exports.getEnv = getEnv;
+</code></pre>
+        </article>
+    </section>
 
 
 

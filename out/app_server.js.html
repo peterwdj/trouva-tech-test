@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Module: app</title>
+    <title>JSDoc: Source: app/server.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,130 +17,135 @@
 
 <div id="main">
 
-    <h1 class="page-title">Module: app</h1>
+    <h1 class="page-title">Source: app/server.js</h1>
 
     
 
 
 
-
-<section>
-
-<header>
     
-        
-            
-        
-    
-</header>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>'use strict';
 
-<article>
-    <div class="container-overview">
-    
-        
-            <div class="description">app Module, exports the app module.</div>
-        
+/**
+ * The process.env.NODE_ENV variable in the global namespace is conditionally assigned the value of 'development'.
+ * @type {string}
+ */
+process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
-        
-            
+/**
+ * express module
+ * @const
+ */
+const express = require('express');
 
+/**
+ * MongoClient function of mongodb module
+ * @const
+ */
+const MongoClient = require('mongodb').MongoClient;
 
+/**
+ * body-parser module
+ * @const
+ */
+const bodyParser = require('body-parser');
 
+/**
+ * express fs
+ * @const
+ */
+const fs = require('fs');
 
+/**
+ * getEnv function of config module
+ * @const
+ */
+const config = require('./config').getEnv(process.env.NODE_ENV);
 
+/**
+ * utils module
+ * @const
+ */
+const utils = require('./utils');
 
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="app_server.js.html">app/server.js</a>, <a href="app_server.js.html#line113">line 113</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
+/**
+ * routes module
+ * @const
+ */
+const routes = require('./routes/routes');
 
 
+/**
+ * Parsed JSON file
+ * @const
+ * @type {json}
+ * @default
+ */
+const json = JSON.parse(fs.readFileSync('products.json'));
+
+/**
+ * Sets database URL
+ * @const
+ * @type {string}
+ * @default
+ */
+const url = `mongodb://localhost:27017/${config.database}`;
+
+/**
+ * Localhost port
+ * @const
+ * @type {number}
+ * @default
+ */
+const port = 8000;
+
+/**
+ * Instance of the Express framework
+ * @const
+ * @type {object}
+ * @default
+ */
+const app = express();
 
 
+app.set('view engine', 'ejs');
+app.set('views', './app/public/views');
+app.use(express.static('./app/public'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
+MongoClient.connect(url, (err, db) => {
+  /**
+   * Assigns database to database constant
+   * @const
+   * @type {object}
+   * @default
+   */
+  const database = db.db(config.database);
 
+  /**
+   * Assigns array of created Product objects to products constant
+   * @const
+   * @type {number}
+   * @default
+   */
+  const products = utils.createObjects(json.products);
+  utils.seedProducts(database, products);
+  routes(app, database);
+});
 
+app.listen(port);
 
-
-
-
-
-
-
-
-
-
-
-        
-    
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</article>
-
-</section>
+/**
+ * app Module, exports the app module.
+ * @module app
+ */
+module.exports = app;
+</code></pre>
+        </article>
+    </section>
 
 
 

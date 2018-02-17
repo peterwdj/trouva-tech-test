@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Module: app</title>
+    <title>JSDoc: Source: test/units/collection-test.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,130 +17,58 @@
 
 <div id="main">
 
-    <h1 class="page-title">Module: app</h1>
+    <h1 class="page-title">Source: test/units/collection-test.js</h1>
 
     
 
 
 
-
-<section>
-
-<header>
     
-        
-            
-        
-    
-</header>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>'use strict';
 
-<article>
-    <div class="container-overview">
-    
-        
-            <div class="description">app Module, exports the app module.</div>
-        
+/**
+ * chai module
+ * @const
+ */
+const chai = require('chai');
 
-        
-            
+/**
+ * collection module
+ * @const
+ */
+const Collection = require('./../../app/lib/collection');
 
+/**
+ * Assigns Chai expect function to expect constant.
+ * @const
+ * @type {function}
+ * @default
+ */
+const expect = chai.expect;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="app_server.js.html">app/server.js</a>, <a href="app_server.js.html#line113">line 113</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-    
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</article>
-
-</section>
+describe('Collection', () => {
+  /**
+   * Assigns a new Product object to the bowTie constant.
+   * @const
+   * @type {function}
+   * @default
+   */
+  const collection = new Collection('Home Stuff');
+  it('has a name', () => {
+    expect(collection).to.have.property('name');
+  });
+  it('has a products property', () => {
+    expect(collection).to.have.property('products');
+  });
+  it('has an empty array assigned to its products property by default', () => {
+    expect(collection.products).to.be.a('array');
+  });
+});
+</code></pre>
+        </article>
+    </section>
 
 
 

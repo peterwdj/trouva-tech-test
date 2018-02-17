@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Module: app</title>
+    <title>JSDoc: Source: test/utils-test.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,130 +17,75 @@
 
 <div id="main">
 
-    <h1 class="page-title">Module: app</h1>
+    <h1 class="page-title">Source: test/utils-test.js</h1>
 
     
 
 
 
-
-<section>
-
-<header>
     
-        
-            
-        
-    
-</header>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>'use strict';
 
-<article>
-    <div class="container-overview">
-    
-        
-            <div class="description">app Module, exports the app module.</div>
-        
+/**
+ * chai module
+ * @const
+ */
+const chai = require('chai');
 
-        
-            
+/**
+ * utils module
+ * @const
+ */
+const utils = require('./../app/utils');
 
+/**
+ * Assigns Chai expect function to expect constant.
+ * @const
+ */
+const expect = chai.expect;
 
+describe('Utils', () => {
+  describe('createObjects', () => {
+    /**
+     * Assigns an array of products from products.json to the productArray constant.
+     * @const
+     * @type {hash}
+     * @default
+     */
+    const productArray = [
+      {
+        _id: '1234',
+        name: 'Bow tie',
+        thumbnail: {
+          url: 'url.jpg',
+        },
+        description: 'Bow ties are cool',
+        price: '3200',
+      },
+    ];
 
+    /**
+     * Assigns an array of product objects to the products constant.
+     * @const
+     */
+    const products = utils.createObjects(productArray);
 
+    it('should return an array', (done) => {
+      expect(products).to.be.a('array');
+      done();
+    });
 
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="app_server.js.html">app/server.js</a>, <a href="app_server.js.html#line113">line 113</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-    
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</article>
-
-</section>
+    it('should contain 500 products', (done) => {
+      expect(products.length).to.equal(1);
+      done();
+    });
+  });
+});
+</code></pre>
+        </article>
+    </section>
 
 
 

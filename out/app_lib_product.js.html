@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Module: app</title>
+    <title>JSDoc: Source: app/lib/product.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,130 +17,45 @@
 
 <div id="main">
 
-    <h1 class="page-title">Module: app</h1>
+    <h1 class="page-title">Source: app/lib/product.js</h1>
 
     
 
 
 
-
-<section>
-
-<header>
     
-        
-            
-        
-    
-</header>
-
-<article>
-    <div class="container-overview">
-    
-        
-            <div class="description">app Module, exports the app module.</div>
-        
-
-        
-            
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>'use strict';
 
 
+/**
+ * Represents a product.
+ * @constructor
+ * @param {string} name - The name of the product.
+ * @param {string} id - The id of the product.
+ * @param {string} image - A link to an image of the product.
+ * @param {string} description - The description of the product.
+ * @param {string} price - The price of the product, in pence.
+ */
+class Product {
+  constructor(name, id, image, description, price) {
+    this.name = name;
+    this._id = id;
+    this.image = image;
+    this.description = description;
+    this.price = price;
+  }
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="app_server.js.html">app/server.js</a>, <a href="app_server.js.html#line113">line 113</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-    
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</article>
-
-</section>
+/**
+ * Product Module, exports the product class.
+ * @module product
+ */
+module.exports = Product;
+</code></pre>
+        </article>
+    </section>
 
 
 

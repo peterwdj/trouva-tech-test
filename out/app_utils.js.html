@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Module: app</title>
+    <title>JSDoc: Source: app/utils.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,130 +17,65 @@
 
 <div id="main">
 
-    <h1 class="page-title">Module: app</h1>
+    <h1 class="page-title">Source: app/utils.js</h1>
 
     
 
 
 
-
-<section>
-
-<header>
     
-        
-            
-        
-    
-</header>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>'use strict';
 
-<article>
-    <div class="container-overview">
-    
-        
-            <div class="description">app Module, exports the app module.</div>
-        
+/**
+ * product module
+ * @const
+ */
+const Product = require('./lib/product');
 
-        
-            
+/**
+ * Creates an array of Product objects from information in products.json.
+ * @function
+ * @name createObjects
+ * @param {array} array - An array of JSON objects from products.json.
+ */
+function createObjects(array) {
+  const products = [];
+  array.forEach((item) => {
+    const product = new Product(item.name, item._id, item.thumbnail.url, item.description, item.price);
+    products.push(product);
+  });
+  return products;
+}
 
+/**
+ * Seeds the database with all products from products.json.
+ * @function
+ * @name getEnv
+ * @param {object} db - An instance of a MongoDB database.
+ * @param {object} products - An array of Product objects.
+ */
+function seedProducts(db, products) {
+  products.forEach((product) => {
+    db.collection('products').save(product);
+  });
+}
 
+/**
+ * createObjects Module, exports the createObjects function.
+ * @module createObjects
+ */
+module.exports.createObjects = createObjects;
 
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="app_server.js.html">app/server.js</a>, <a href="app_server.js.html#line113">line 113</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-    
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</article>
-
-</section>
+/**
+ * seedProducts Module, exports the seedProducts function.
+ * @module seedProducts
+ */
+module.exports.seedProducts = seedProducts;
+</code></pre>
+        </article>
+    </section>
 
 
 
