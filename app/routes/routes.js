@@ -81,6 +81,12 @@ function routes(app, db) {
    * @param {callback} middlewear - Express middlewear.
    */
   app.post('/collections', (req, res) => {
+    /**
+     * Assigns the collection constant the value of the request body's name.
+     * @const
+     * @type {function}
+     * @default
+     */
     const collection = new Collection(req.body.name);
     db.collection('collections').save(collection);
     res.redirect('/collections');
@@ -96,7 +102,19 @@ function routes(app, db) {
    * @param {callback} middlewear - Express middlewear.
    */
   app.post('/collections/:id', (req, res) => {
+    /**
+     * Assigns the collectionId constant the value of the request body's collectionId expressed as a string.
+     * @const
+     * @type {function}
+     * @default
+     */
     const collectionId = req.body.collectionId.toString();
+    /**
+     * Assigns the productId constant the value of the request body's productId.
+     * @const
+     * @type {function}
+     * @default
+     */
     const productId = req.body.productId;
     db.collection('products').find({ _id: productId }).toArray((err, result) => {
       db.collection('collections').update(

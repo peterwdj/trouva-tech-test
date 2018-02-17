@@ -1,12 +1,38 @@
 'use strict';
 
+/**
+ * chai module
+ * @const
+ */
 const chai = require('chai');
+
+/**
+ * product module
+ * @const
+ */
 const Product = require('./../../app/lib/product');
 
+/**
+ * Assigns Chai expect function to expect constant.
+ * @const
+ */
 const expect = chai.expect;
 
 describe('Product', () => {
+  /**
+   * Assigns a new Product object to the bowTie constant.
+   * @const
+   * @type {function}
+   * @default
+   */
   const bowTie = new Product();
+
+  /**
+   * Assigns a hash mimicking a product from products.json to the json constant.
+   * @const
+   * @type {hash}
+   * @default
+   */
   const json = {
     _id: '1234',
     name: 'Bow tie',
@@ -32,6 +58,12 @@ describe('Product', () => {
     expect(bowTie).to.have.property('price');
   });
   it('creates a product with values from a json object', () => {
+    /**
+     * Assigns a new Product object to the newBowTie constant.
+     * @const
+     * @type {function}
+     * @default
+     */
     const newBowTie = new Product(json.name, json._id, json.images[0].desktop, json.description, json.price);
     expect(newBowTie.name).to.equal('Bow tie');
     expect(newBowTie._id).to.equal('1234');

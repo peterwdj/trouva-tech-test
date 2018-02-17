@@ -1,12 +1,31 @@
 'use strict';
 
+/**
+ * chai module
+ * @const
+ */
 const chai = require('chai');
+
+/**
+ * utils module
+ * @const
+ */
 const utils = require('./../app/utils');
 
+/**
+ * Assigns Chai expect function to expect constant.
+ * @const
+ */
 const expect = chai.expect;
 
 describe('Utils', () => {
   describe('createObjects', () => {
+    /**
+     * Assigns an array of products from products.json to the productArray constant.
+     * @const
+     * @type {hash}
+     * @default
+     */
     const productArray = [
       {
         _id: '1234',
@@ -19,6 +38,10 @@ describe('Utils', () => {
       },
     ];
 
+    /**
+     * Assigns an array of product objects to the products constant.
+     * @const
+     */
     const products = utils.createObjects(productArray);
 
     it('should return an array', (done) => {
