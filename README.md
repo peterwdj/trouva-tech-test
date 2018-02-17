@@ -114,6 +114,8 @@ I am aware that the decision to use [EJS](http://ejs.co/) for the front end of t
 *Linting*   
 There exists some conflicts between the Airbnb ESLint style guide and other tools used in this project - the guide, for example, says that strict mode is unnecessary, whilst Mocha will not recognise scoped `let` or `const` statements outside of strict mode. These errors, where they exist, have been ignored.
 
+*Collections/:id post route*
+
 *Known bugs*   
 There is a bug when creating a collection that means that the newly-created collection does not always appear on the page, and the page must be manually reloaded to see it. I have not been able to consistently reproduce this behaviour.
 

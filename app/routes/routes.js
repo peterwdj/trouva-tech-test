@@ -1,13 +1,53 @@
 'use strict';
 
+/** Routing file for application
+ * @module routes/routes
+ * @requires collection
+ * @requires mongodb.ObjectID
+ */
+
+/**
+ * collection module
+ * @const
+ */
 const Collection = require('./../lib/collection');
+
+/**
+ * mongodb.ObjectID module
+ * @const
+ */
 const ObjectID = require('mongodb').ObjectID;
 
+
+/**
+ * @function
+ * @name routes
+ * @param {object} app - An instance of the Express framework.
+ * @param {object} db - A connection to a MongoDB database.
+ */
 function routes(app, db) {
+  /**
+   * Route serving index page, redirecting to products page.
+   * @name get/
+   * @function
+   * @memberof module:routes~routesRoutes
+   * @inner
+   * @param {string} path - Express path
+   * @param {callback} middlewear - Express middlewear.
+   */
   app.get('/', (req, res) => {
     res.redirect('/products');
   });
 
+  /**
+   * Route serving products page.
+   * @name get/products
+   * @function
+   * @memberof module:routes~routesRoutes
+   * @inner
+   * @param {string} path - Express path
+   * @param {callback} middlewear - Express middlewear.
+   */
   app.get('/products', (req, res) => {
     db.collection('products').find().toArray((err, products) => {
       db.collection('collections').find().toArray((error, collections) => {
@@ -16,18 +56,45 @@ function routes(app, db) {
     });
   });
 
+  /**
+   * Route serving collections page.
+   * @name get/collections
+   * @function
+   * @memberof module:routes~routesRoutes
+   * @inner
+   * @param {string} path - Express path
+   * @param {callback} middlewear - Express middlewear.
+   */
   app.get('/collections', (req, res) => {
     db.collection('collections').find().toArray((err, result) => {
       res.render('pages/collections', { collections: result });
     });
   });
 
+  /**
+   * Route creating a new collection and redirecting to get/collections.
+   * @name post/collections
+   * @function
+   * @memberof module:routes~routesRoutes
+   * @inner
+   * @param {string} path - Express path
+   * @param {callback} middlewear - Express middlewear.
+   */
   app.post('/collections', (req, res) => {
     const collection = new Collection(req.body.name);
     db.collection('collections').save(collection);
     res.redirect('/collections');
   });
 
+  /**
+   * Route adding a product to a collection.
+   * @name post/collections/:id
+   * @function
+   * @memberof module:routes~routesRoutes
+   * @inner
+   * @param {string} path - Express path
+   * @param {callback} middlewear - Express middlewear.
+   */
   app.post('/collections/:id', (req, res) => {
     const collectionId = req.body.collectionId.toString();
     const productId = req.body.productId;
@@ -41,4 +108,8 @@ function routes(app, db) {
   });
 }
 
+/**
+ * Routes Module, exports all application routes.
+ * @module routes
+ */
 module.exports = routes;

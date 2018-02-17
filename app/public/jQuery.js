@@ -1,3 +1,14 @@
+/**
+ * The jQuery plugin namespace.
+ * @external "jQuery.fn"
+ * @see {@link http://learn.jquery.com/plugins/|jQuery Plugins}
+ */
+
+/**
+ * A jQuery plugin to send a POST request to /collections/:id.
+ * @function external:"jQuery.fn"
+ */
+
 $(document).ready(function () {
   $('button.add-to-collection').click(function() {
     const productId = $(this).parent().prop('id');
