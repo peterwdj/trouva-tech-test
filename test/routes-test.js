@@ -28,6 +28,8 @@ describe('Test API routes', () => {
         .get('/products')
         .end((err, res) => {
           expect(res).to.have.status(200);
+          expect(res.text).to.include('Trouva | Products');
+          expect(res.text).to.include('Moc Toe Charcoal Ankle Boot');
           done();
         });
     });
@@ -39,6 +41,9 @@ describe('Test API routes', () => {
         .get('/collections')
         .end((err, res) => {
           expect(res).to.have.status(200);
+          expect(res.text).to.include('Trouva | Collections');
+          expect(res.text).to.include('It looks like you don\'t have any collections yet');
+          expect(res.text).to.not.include('Homewares');
           done();
         });
     });
@@ -55,6 +60,7 @@ describe('Test API routes', () => {
         .send(collection)
         .end((err, res) => {
           expect(res).to.have.status(200);
+          expect(res.text).to.include('Homewares');
           done();
         });
     });
@@ -71,6 +77,7 @@ describe('Test API routes', () => {
         .send(IDs)
         .end((err, res) => {
           expect(res).to.have.status(200);
+          expect(res.text).to.eq('Product has been successfully added to collection.');
           done();
         });
     });
