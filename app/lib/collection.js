@@ -5,10 +5,6 @@ class Collection {
     this.name = name;
     this.products = [];
   }
-
-  addProduct(product) {
-    this.products.push(product);
-  }
 }
 
 module.exports = Collection;
