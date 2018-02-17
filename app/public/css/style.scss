@@ -26,6 +26,50 @@ $link: $trouva-orange;
 
 
 // Sassy CSS
+
+// General purpose style
+.button {
+  margin-left: 1rem;
+  border-radius: 0px;
+}
+
+.box {
+  border-top: none;
+  border-right: none;
+}
+
+.page-content {
+  margin-top: 12rem;
+}
+
+.title-container {
+  position: fixed;
+}
+
+section {
+  margin-top: 3rem;
+  padding: 1rem;
+  width: 100%;
+  position: fixed;
+  z-index: 5;
+}
+
+.subtitle {
+  color: $trouva-grey-darker;
+  font-family: $family-cursive;
+  padding-top: 0.5rem;
+}
+
+option {
+  max-width: 10rem;
+}
+
+.input {
+  width: 20rem;
+}
+
+
+// Header style
 .logo {
   max-width: 60%;
   height: auto;
@@ -43,45 +87,20 @@ $link: $trouva-orange;
   padding: 1rem 0rem;
 }
 
-.button {
-  margin-left: 1rem;
-  border-radius: 0px;
-}
 
-.page-content {
-  margin-top: 12rem;
-}
-
-.title-container {
-  position: fixed;
-}
-
+// Products style
 .card-content {
   min-height: 28rem;
   padding-bottom: 0.5rem;
 }
 
-.product-title {
+.product-title-container {
   min-height: 3.5rem;
 }
 
 .product-description {
   text-align: justify;
   text-justify: inter-word;
-}
-
-section {
-  margin-top: 3rem;
-  padding: 1rem;
-  width: 100%;
-  position: fixed;
-  z-index: 5;
-}
-
-.subtitle {
-  color: $trouva-grey-darker;
-  font-family: $family-cursive;
-  padding-top: 0.5rem;
 }
 
 .product-description-container {
@@ -101,15 +120,8 @@ section {
   color: $dark;
 }
 
-option {
-  max-width: 10rem;
-}
 
-.box {
-  border-top: none;
-  border-right: none;
-}
-
+// Collections style
 .collection-name {
   margin-bottom: 0;
 }
@@ -128,10 +140,6 @@ option {
   margin-bottom: 2rem;
 }
 
-.collection-form {
+.collection-form-container {
   margin-bottom: 5rem;
-}
-
-.input {
-  width: 20rem;
 }
