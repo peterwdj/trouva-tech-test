@@ -69,7 +69,7 @@ This project has been built to fulfill the minimum requirements of the four user
  - A view for individual products
  - A view for an individual collection, allowing the user to see which products are in a collection (see [notes](#notes) for further details on this)
  - Guard feature that prevents the user adding the same product to a single collection multiple times
- - Updating collections and inputting further information, such as a cover image, optional description etc. (see [notes](#notes)
+ - Updating collections and inputting further information, such as a cover image, optional description etc. (see [notes](#notes))
  - The ability to remove a product from a collection
 
 
@@ -117,7 +117,7 @@ I am aware that the decision to use [EJS](http://ejs.co/) for the front end of t
 There exists some conflicts between the Airbnb ESLint style guide and other tools used in this project - the guide, for example, says that strict mode is unnecessary, whilst Mocha will not recognise scoped `let` or `const` statements outside of strict mode. These errors, where they exist, have been ignored.
 
 *Collections/:id post route*   
-Currently, this is the route that handles adding a product to a collection (updating a collection by inserting a new product into it). However, as more features are added, this route might seem better suited to updating information about a collection. 
+Currently, this is the route that handles adding a product to a collection (updating a collection by inserting a new product into it). However, as more features are added, this route might seem better suited to updating information about a collection.
 
 *Known bugs*   
 There is a bug when creating a collection that means that the newly-created collection does not always appear on the page, and the page must be manually reloaded to see it. I have not been able to consistently reproduce this behaviour.
