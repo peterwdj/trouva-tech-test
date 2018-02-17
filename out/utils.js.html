@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Module: routes</title>
+    <title>JSDoc: Source: utils.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,130 +17,65 @@
 
 <div id="main">
 
-    <h1 class="page-title">Module: routes</h1>
+    <h1 class="page-title">Source: utils.js</h1>
 
     
 
 
 
-
-<section>
-
-<header>
     
-        
-            
-        
-    
-</header>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>'use strict';
 
-<article>
-    <div class="container-overview">
-    
-        
-            <div class="description">Routes Module, exports all application routes.</div>
-        
+/**
+ * product module
+ * @const
+ */
+const Product = require('./lib/product');
 
-        
-            
+/**
+ * Creates an array of Product objects from information in products.json.
+ * @function
+ * @name createObjects
+ * @param {array} array - An array of JSON objects from products.json.
+ */
+function createObjects(array) {
+  const products = [];
+  array.forEach((item) => {
+    const product = new Product(item.name, item._id, item.thumbnail.url, item.description, item.price);
+    products.push(product);
+  });
+  return products;
+}
 
+/**
+ * Seeds the database with all products from products.json.
+ * @function
+ * @name getEnv
+ * @param {object} db - An instance of a MongoDB database.
+ * @param {object} products - An array of Product objects.
+ */
+function seedProducts(db, products) {
+  products.forEach((product) => {
+    db.collection('products').save(product);
+  });
+}
 
+/**
+ * createObjects Module, exports the createObjects function.
+ * @module createObjects
+ */
+module.exports.createObjects = createObjects;
 
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="routes_routes.js.html">routes/routes.js</a>, <a href="routes_routes.js.html#line111">line 111</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-    
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</article>
-
-</section>
+/**
+ * seedProducts Module, exports the seedProducts function.
+ * @module seedProducts
+ */
+module.exports.seedProducts = seedProducts;
+</code></pre>
+        </article>
+    </section>
 
 
 
