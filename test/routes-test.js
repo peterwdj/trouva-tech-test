@@ -22,6 +22,18 @@ describe('Test API routes', () => {
     });
   });
 
+  describe('Index', () => {
+    it('should redirect to the products route', (done) => {
+      chai.request(server)
+        .get('/')
+        .end((err, res) => {
+          expect(res).to.have.status(200);
+          expect(res).to.redirect;
+          done();
+        });
+    });
+  });
+
   describe('/GET products', () => {
     it('should return status code 200', (done) => {
       chai.request(server)
