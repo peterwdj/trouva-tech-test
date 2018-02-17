@@ -6504,39 +6504,19 @@ label.panel-block {
   background-color: whitesmoke;
   padding: 3rem 1.5rem 6rem; }
 
-.logo {
-  max-width: 60%;
-  height: auto; }
-
-.header {
-  height: 2rem; }
-
-.level {
-  width: 100%; }
-
-.navbar {
-  padding: 1rem 0rem; }
-
 .button {
   margin-left: 1rem;
   border-radius: 0px; }
+
+.box {
+  border-top: none;
+  border-right: none; }
 
 .page-content {
   margin-top: 12rem; }
 
 .title-container {
   position: fixed; }
-
-.card-content {
-  min-height: 28rem;
-  padding-bottom: 0.5rem; }
-
-.product-title {
-  min-height: 3.5rem; }
-
-.product-description {
-  text-align: justify;
-  text-justify: inter-word; }
 
 section {
   margin-top: 3rem;
@@ -6550,6 +6530,36 @@ section {
   font-family: "Great Vibes", cursive;
   padding-top: 0.5rem; }
 
+option {
+  max-width: 10rem; }
+
+.input {
+  width: 20rem; }
+
+.logo {
+  max-width: 60%;
+  height: auto; }
+
+.header {
+  height: 2rem; }
+
+.level {
+  width: 100%; }
+
+.navbar {
+  padding: 1rem 0rem; }
+
+.card-content {
+  min-height: 28rem;
+  padding-bottom: 0.5rem; }
+
+.product-title-container {
+  min-height: 3.5rem; }
+
+.product-description {
+  text-align: justify;
+  text-justify: inter-word; }
+
 .product-description-container {
   min-height: 4.5rem; }
 
@@ -6562,13 +6572,6 @@ section {
 .create-collection-text {
   margin-top: 1rem;
   color: #1a1a1a; }
-
-option {
-  max-width: 10rem; }
-
-.box {
-  border-top: none;
-  border-right: none; }
 
 .collection-name {
   margin-bottom: 0; }
@@ -6584,8 +6587,5 @@ option {
   font-size: 1.25rem;
   margin-bottom: 2rem; }
 
-.collection-form {
+.collection-form-container {
   margin-bottom: 5rem; }
-
-.input {
-  width: 20rem; }
