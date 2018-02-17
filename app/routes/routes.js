@@ -4,6 +4,10 @@ const Collection = require('./../lib/collection');
 const ObjectID = require('mongodb').ObjectID;
 
 function routes(app, db) {
+  app.get('/', (req, res) => {
+    res.redirect('/products');
+  });
+
   app.get('/products', (req, res) => {
     db.collection('products').find().toArray((err, products) => {
       db.collection('collections').find().toArray((error, collections) => {
