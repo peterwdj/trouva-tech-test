@@ -1,6 +1,6 @@
 # Trouva Tech Test
 
-[Introduction](#introduction) | [Quickstart](#introduction) | [Development](#development) [Roadmap](#roadmap) | [Tech Stack](#tech-stack) | [Notes](#notes)
+[Introduction](#introduction) | [Quickstart](#introduction) | [Development](#development) | [Roadmap](#roadmap) | [Tech Stack](#tech-stack) | [Notes](#notes)
 
 ## Introduction
 
