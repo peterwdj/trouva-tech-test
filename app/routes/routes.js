@@ -32,7 +32,7 @@ function routes(app, db) {
         { _id: ObjectID(collectionId) },
         { $push: { products: result[0] } }
       );
-      res.redirect('/collections');
+      res.send('Product has been successfully added to collection.');
     });
   });
 }
