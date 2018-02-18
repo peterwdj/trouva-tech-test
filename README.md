@@ -11,6 +11,8 @@ This project is a tech test for [Trouva](https://www.trouva.com/). The specifica
   3 - I should be able to create a new collection   
   4 - I should be able to assign a product to a collection
 
+This project is documented at a functional level using [JSDoc](http://usejsdoc.org/). To view this documentation, open the file located at `out/index.html`.
+
 
 ## Quickstart
 
@@ -62,6 +64,12 @@ If you would like to make any aesthetic/styling changes, then do so in [Sass](ht
 npm run sass:compile
 ```
 
+If any changes are made to the JavaScript, please take the time to document the code. To do so, leave a [JSDoc](http://usejsdoc.org/about-getting-started.html) comment on the new or changed code, and then add it to out/index.html:
+
+```
+./node_modules/.bin/jsdoc path/to/file.js
+```
+
 
 ## Roadmap
 
@@ -100,6 +108,7 @@ This project is built in full-stack JavaScript, using the following technologies
 | Chai        | Test assertion library |
 | ESLint      | Linting tool, used with the Airbnb style guide |
 | Istanbul    | Test coverage tool |
+| JSDoc       | Documentation generator |
 
 
 ## Notes
