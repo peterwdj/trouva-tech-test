@@ -9,8 +9,8 @@
  * @function external:"jQuery.fn"
  */
 
-$(document).ready(() => {
-  $('button.add-to-collection').click(() => {
+$(document).ready(function() {
+  $('button.add-to-collection').click(function() {
     /**
      * Sets productId constant
      * @const
