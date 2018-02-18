@@ -88,7 +88,7 @@ There are other features that might make sense to be added to the application in
  - Search
  - Sharing collections via email and social media
  - Collaborative collections with other Trouva users
- - Suggested products, using machine learning to identify a cohesive style/aesthetic across a collection and recommend other products
+ - Suggested products, using unsupervised machine learning to identify a cohesive style/aesthetic across a collection and recommend other products
 
 I am treating this project as the development of the 'Collections' feature in isolation. As such, future features such as integration with Trouva's user sign-in, or adding a footer to the page, have been left off this list but, needless to say, would need to be implemented if this project were integrated into Trouva's application.
 
@@ -114,20 +114,20 @@ This project is built in full-stack JavaScript, using the following technologies
 
 ## Notes
 
-*Routes*  
-RESTful routes are plural rather than singular, as on Trouva's website.
-
 *Collections*   
 When creating this project, I considered adding a view for individual collections, allowing the user to verify that something had happened when they added the product to a collection. I chose instead to insert a message onto the page telling the user that the product had been added after clicking the Add button, and to display the number of items in a collection on the collections view, which seemed like a more minimal way of providing the same confirmation.
 
 *Embedded JavaScript*   
 I am aware that the decision to use [EJS](http://ejs.co/) for the front end of the application is an unconventional one. Given that this project was explicitly just a prototype, I opted to use EJS due to its simplicity and familiarity (although I had not used it before, I have, of course, used both HTML and JavaScript), both of which would speed up development time. Being able to use partials to modularise the pages was also attractive. Having used EJS, I now appreciate many of its limitations - injecting a page title, for example, feels like it should be much simpler, as do page templates. Additionally, the combination of JavaScript and HTML in a single file makes for poor readability. Were I to rebuild this application, I would make use of a more powerful front-end framework; from some brief research [Vue JS](https://vuejs.org/) which enables templating, is, by all reports, simple to use and quick to pick up, and has a testing framework, seems like it might be an appropriate choice.
 
-*Linting*   
-There exists some conflicts between the Airbnb ESLint style guide and other tools used in this project - the guide, for example, says that strict mode is unnecessary, whilst Mocha will not recognise scoped `let` or `const` statements outside of strict mode. These errors, where they exist, have been ignored.
-
 *Collections/:id post route*   
 Currently, this is the route that handles adding a product to a collection (updating a collection by inserting a new product into it). However, as more features are added, this route might seem better suited to updating information about a collection.
+
+*Routes*  
+RESTful routes are plural rather than singular, as on Trouva's website.
+
+*Linting*   
+There exists some conflicts between the Airbnb ESLint style guide and other tools used in this project - the guide, for example, says that strict mode is unnecessary, whilst Mocha will not recognise scoped `let` or `const` statements outside of strict mode. These errors, where they exist, have been ignored.
 
 *Known bugs*   
 There is a bug when creating a collection that means that the newly-created collection does not always appear on the page, and the page must be manually reloaded to see it. I have not been able to consistently reproduce this behaviour.
