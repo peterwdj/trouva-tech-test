@@ -36,7 +36,7 @@ To use the application, visit http://localhost:8000/.
 ## Development
 
 *Testing*   
-You can run the tests in two ways:
+Tests are run using the [Mocha](https://mochajs.org/) testrunner and the [Chai](http://chaijs.com/) assertion library. They can be run the in two ways:
 
 ```
 npm test                        // runs the entire test suite
@@ -44,16 +44,15 @@ mocha path/to/file.js           // runs a specific file of tests
 
 ```
 
-Test coverage is currently 100%.
+Test coverage is currently 100% (verified by [Istanbul](https://istanbul.js.org/)).
 
 *Linting*   
-This project uses ESLint to ensure code is written in a consistent manner. ESLint can be run with the following command:
+This project uses [ESLint](https://eslint.org/) to ensure code is written in a consistent manner. ESLint can be run with the following command:
 ```
 npm run linter
 ```
 
 *Editing the code*
-
 If you would like to edit the code further and continue working, it is recommended to do so with [Nodemon](https://nodemon.io/), which will automatically restart the server when changes are made, instead of with Node. To do so, just run:
 ```
 npm run dev
