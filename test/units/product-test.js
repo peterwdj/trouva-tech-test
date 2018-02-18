@@ -64,7 +64,13 @@ describe('Product', () => {
      * @type {function}
      * @default
      */
-    const newBowTie = new Product(json.name, json._id, json.images[0].desktop, json.description, json.price);
+    const newBowTie = new Product(
+      json.name,
+      json._id,
+      json.images[0].desktop,
+      json.description,
+      json.price,
+    );
     expect(newBowTie.name).to.equal('Bow tie');
     expect(newBowTie._id).to.equal('1234');
     expect(newBowTie.image).to.equal('url.jpg');

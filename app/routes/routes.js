@@ -103,7 +103,7 @@ function routes(app, db) {
    */
   app.post('/collections/:id', (req, res) => {
     /**
-     * Assigns the collectionId constant the value of the request body's collectionId expressed as a string.
+     * Assigns the collectionId constant the request body's collectionId as a string.
      * @const
      * @type {function}
      * @default
@@ -119,7 +119,7 @@ function routes(app, db) {
     db.collection('products').find({ _id: productId }).toArray((err, result) => {
       db.collection('collections').update(
         { _id: ObjectID(collectionId) },
-        { $push: { products: result[0] } }
+        { $push: { products: result[0] } },
       );
       res.send('Product has been successfully added to collection.');
     });

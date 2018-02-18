@@ -9,8 +9,8 @@
  * @function external:"jQuery.fn"
  */
 
-$(document).ready(function () {
-  $('button.add-to-collection').click(function() {
+$(document).ready(() => {
+  $('button.add-to-collection').click(() => {
     const productId = $(this).parent().prop('id');
     const collectionId = $(`#${productId} select :selected`).val();
     $.post(`/collections/${collectionId}`, { productId, collectionId });

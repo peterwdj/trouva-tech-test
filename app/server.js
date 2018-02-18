@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * The process.env.NODE_ENV variable in the global namespace is conditionally assigned the value of 'development'.
+ * Global process.env.NODE_ENV variable is conditionally assigned value of 'development'.
  * @type {string}
  */
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';

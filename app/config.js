@@ -15,7 +15,7 @@ const config = {
 /**
  * @function
  * @name getEnv
- * @param {string} env - The variable assigned to process.env.NODE_ENV variable, set to either test or development.
+ * @param {string} env - The process.env.NODE_ENV variable, set to either test or development.
  */
 function getEnv(env) {
   return config[env];
