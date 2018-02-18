@@ -64,6 +64,7 @@ If you would like to make any aesthetic/styling changes, then do so in [Sass](ht
 npm run sass:compile
 ```
 
+*Documenting the code*
 If any changes are made to the JavaScript, please take the time to document the code. To do so, leave a [JSDoc](http://usejsdoc.org/about-getting-started.html) comment on the new or changed code, and then add it to out/index.html:
 
 ```
