@@ -52,7 +52,7 @@ This project uses [ESLint](https://eslint.org/) to ensure code is written in a c
 npm run linter
 ```
 
-*Editing the code*
+*Editing the code*   
 If you would like to edit the code further and continue working, it is recommended to do so with [Nodemon](https://nodemon.io/), which will automatically restart the server when changes are made, instead of with Node. To do so, just run:
 ```
 npm run dev
@@ -63,7 +63,7 @@ If you would like to make any aesthetic/styling changes, then do so in [Sass](ht
 npm run sass:compile
 ```
 
-*Documenting the code*
+*Documenting the code*   
 If any changes are made to the JavaScript, please take the time to document the code. To do so, leave a [JSDoc](http://usejsdoc.org/about-getting-started.html) comment on the new or changed code, and then add it to out/index.html:
 
 ```
