@@ -140,3 +140,8 @@ Similar to the above, if this application were to be deployed to a real-world se
 
 *Style and aesthetics*   
 The application has been styled with a similar aesthetic as the Trouva website, using the same colour palette and a similar sans-serif font. I have tried to riff on this original theme somewhat, and the visual identity of the application has been shaped by the components and style of the Bulma framework. The cursive, handwriting-esque sub-titles on each page are an attempt to play around with the delightfully whimsical feel of the word *la trouvaille*, and Trouva's catalogue of hand-crafted products.
+
+
+-----
+
+If you have any suggestions either for this project or the documentation, please [open an issue](https://github.com/peterwdj/trouva-tech-test/issues/new).
