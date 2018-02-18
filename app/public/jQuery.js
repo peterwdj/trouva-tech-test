@@ -11,7 +11,20 @@
 
 $(document).ready(() => {
   $('button.add-to-collection').click(() => {
+    /**
+     * Sets productId constant
+     * @const
+     * @type {string}
+     * @default
+     */
     const productId = $(this).parent().prop('id');
+
+    /**
+     * Sets productId constant
+     * @const
+     * @type {string}
+     * @default
+     */
     const collectionId = $(`#${productId} select :selected`).val();
     $.post(`/collections/${collectionId}`, { productId, collectionId });
     $(this).parent().append('<p class="confirmation-message">This lucky find has been saved to your collection!</p>');
