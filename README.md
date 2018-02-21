@@ -125,10 +125,12 @@ Currently, this is the route that handles adding a product to a collection (upda
 *Routes*  
 RESTful routes are plural rather than singular, as on Trouva's website.
 
-*Linting*   
-There exists some conflicts between the Airbnb ESLint style guide and other tools used in this project - the guide, for example, says that strict mode is unnecessary, whilst Mocha will not recognise scoped `let` or `const` statements outside of strict mode. These errors, where they exist, have been ignored.
+*Linting/Testing Redirect*   
+There is only one linting error, that there is an expression instead of a function or assignment call in `routes-test.js`. Ideally, I would like to solve this issue by using the `redirectTo()` matcher rather than `redirect`. However, as the tests access a different local domain each time, this is not possible. As a workaround, the test file finds the redirect address for each test, and matches that against a regular expression with the URL and any 5 digits, as well as testing that the route redirects. This works, but feels unsatisfactory.
 
 *Known bugs*   
+**UPDATE:** This bug was caused by code executing asynchronously, meaning the redirect was sometimes sent before the database had been updated. This has now been fixed by placing the redirect inside a callback function.
+
 There is a bug when creating a collection that means that the newly-created collection does not always appear on the page, and the page must be manually reloaded to see it. I have not been able to consistently reproduce this behaviour.
 
 *Data sanitation*   
