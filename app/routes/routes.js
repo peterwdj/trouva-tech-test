@@ -88,8 +88,9 @@ function routes(app, db) {
      * @default
      */
     const collection = new Collection(req.body.name);
-    db.collection('collections').save(collection);
-    res.redirect('/collections');
+    db.collection('collections').save(collection, () => {
+      res.redirect('/collections');
+    });
   });
 
   /**
