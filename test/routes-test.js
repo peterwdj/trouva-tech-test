@@ -60,7 +60,7 @@ describe('Test API routes', () => {
       * @const
       */
       const database = db.db(config.database);
-      database.collection('collections').drop();
+      database.collection('collections').deleteMany({});
       done();
     });
   });
