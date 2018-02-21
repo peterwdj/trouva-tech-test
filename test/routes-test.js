@@ -71,7 +71,7 @@ describe('Test API routes', () => {
         .get('/')
         .end((err, res) => {
           expect(res).to.have.status(200);
-          let redirect = res.redirects[0];
+          const redirect = res.redirects[0];
           expect(redirect).to.match(/http:\/\/127.0.0.1:\d{5}\/products/);
           expect(res).to.redirect;
           done();
