@@ -40,7 +40,7 @@
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "express": "^4.16.2",
-    "mongodb": "^3.0.2",
+    "mongodb": "^3.1.13",
     "node-sass": "^4.7.2"
   }
 }
